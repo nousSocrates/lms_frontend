@@ -1,0 +1,49 @@
+/* start footer */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(0, 2, 12);
+  color: #3d3b3b;
+  padding: 2rem 0;
+}
+.up {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(247, 7, 247);
+  top: -2.5rem;
+  right: 4rem;
+  border-radius: 100%;
+  display: flex;
+  animation: pulse 2s infinite;
+  cursor: pointer;
+}
+.up .fa-chevron-up {
+  color: #fff;
+  font-size: 1.7rem;
+  margin: auto;
+}
+
+/* Start Animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(253, 87, 191, 0.99);
+  }
+  70% {
+    box-shadow: 0 0 0 2rem rgba(253, 87, 191, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 87, 191, 0);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .up {
+    right: 1rem;
+  }
+}
+
+/*  End Animations */

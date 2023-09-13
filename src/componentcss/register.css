@@ -1,0 +1,113 @@
+
+.card h2 {
+  margin-top: 0rem;
+  background-color: #032921;
+  color: #e4e2e2;
+  width: 100%;
+  padding: 5%;
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.card .input-box {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #12641d;
+  margin: 6px 0;
+  height: 32px;
+  border-radius: 20px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+  color: #fff;
+  font-size: larger;
+}
+
+::placeholder {
+  color: #a3a8a6;
+  font-size: 16px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-btn {
+  position: relative;
+  width: 50%;
+  background: transparent;
+  border: 2px solid #015829b0;
+  height: 35px;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 0% 2%;
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #08eea142;
+}
+
+.login-btn {
+  position: relative;
+  width: 50%;
+  background: transparent;
+  border: 2px solid #015829b0;
+  height: 35px;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 0% 2%;
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #08eea142;
+}
+
+span {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.auth-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  background: #020a246c;
+  width: 100%;
+  border-radius: 5%;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.auth-wrap p {
+  margin: 4%;
+  margin-top: 1%;
+  text-align: center;
+  font-size: 14px;
+  padding: 2%;
+}
+
+.card a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bolder;
+  margin-top: 8px;
+  cursor: pointer;
+}

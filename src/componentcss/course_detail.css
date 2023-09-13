@@ -1,0 +1,10 @@
+.course_videos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.course_time {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
