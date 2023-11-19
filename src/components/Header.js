@@ -85,11 +85,11 @@ function Header() {
       </button>
 
       {/* toggler */}
-      {/* // <div className="menu-toggler">
-      //   <div className="bar half start"></div>
-      //   <div className="bar"></div>
-      //   <div className="bar half end"></div>
-      // </div> */}
+      {/* <div className="menu-toggler">
+        <div className="bar half start"></div>
+        <div className="bar"></div>
+        <div className="bar half end"></div>
+      </div> */}
       {/*end toggler */}
 
       <div className="collapse navbar-collapse me-8" id="navbarCollapse">

@@ -1,9 +1,14 @@
 import { Container } from "../../componentcss/styledcss/Container.styled";
+import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
 function MpesaAPI() {
-  const [data, setData] = useState({});
+  const [paymentDetails, setPaymentDetails] = useState({
+    amount: "",
+    phone_number: "",
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -23,14 +28,36 @@ function MpesaAPI() {
     axios
       .get(apiUrl, { headers })
       .then((response) => {
-        setData(response.data);
+        setPaymentDetails(response.data);
         setLoading(false);
       })
       .catch((err) => {
         setError(err);
         setLoading(false);
       });
-  }, []);
+   }, []);
+
+  const handleChange = (e) => {
+    setPaymentDetails({
+      ...paymentDetails,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Make an Axios POST request to your backend endpoint
+      const response = await axios.post("/api/lipa_na_mpesa", paymentDetails);
+
+      // Handle the response as needed
+      console.log(response.data);
+    } catch (error) {
+      // Handle errors
+      console.error("Error submitting payment:", error);
+    }
+  };
 
   // if (loading) {
   //   return <div>Loading...</div>;
@@ -48,30 +75,35 @@ function MpesaAPI() {
             <h6 className="section-title bg-white text-center text-primary px-3">
               MPESA
             </h6>
-          </div>
-          <div className="row g-4 justify-content-center">
-            <div className=" bg-primary container  py-3">
-              <h6 className="mb-2 fw-bold fs-6 text-warning ">
-                PAYBILL:4101811
-              </h6>
-              <h6 className="mb-2 fw-light fs-6 text-warning">
-                Socrates Schools Online
-              </h6>
-              <label>Enter your Phone nummber</label>
+            <form onSubmit={handleSubmit} className="border p-2">
+              <label>
+                Amount:
+                <input
+                  type="number"
+                  name="amount"
+                  value={paymentDetails.amount}
+                  onChange={handleChange}
+                />
+              </label>
               <br />
-              <input className="mt-3" placeholder="Start with 2547" />
+              <label>
+                Phone Number:
+                <input
+                  type="tel"
+                  name="phone_number"
+                  value={paymentDetails.phone_number}
+                  onChange={handleChange}
+                />
+              </label>
               <br />
-                <button
-                  type="button"
-                  title="Submit to authorize payment"
-                  className="btn btn-sm  me-5 float-end  btn-outline-success text-warning"
-                >
-                  Submit
-                </button>
-             
-            </div>
-
-            {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+              <button
+                onClick={handleSubmit}
+                type="submit"
+                className="btn btn-sm  m-auto mt-3  btn-outline-success text-warning"
+              >
+                Pay with M-Pesa
+              </button>
+            </form>
           </div>
         </div>
       </div>
