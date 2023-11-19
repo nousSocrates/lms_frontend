@@ -42,9 +42,39 @@ function MpesaAPI() {
 
   return (
     <Container>
-      <h1>M-Pesa API Data</h1>
-      <p></p>
-     <pre>{JSON.stringify(data, null, 2)}</pre>
+      <div className="container-xxl py-5">
+        <div className="container">
+          <div className="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
+            <h6 className="section-title bg-white text-center text-primary px-3">
+              MPESA
+            </h6>
+          </div>
+          <div className="row g-4 justify-content-center">
+            <div className=" bg-primary container  py-3">
+              <h6 className="mb-2 fw-bold fs-6 text-warning ">
+                PAYBILL:4101811
+              </h6>
+              <h6 className="mb-2 fw-light fs-6 text-warning">
+                Socrates Schools Online
+              </h6>
+              <label>Enter your Phone nummber</label>
+              <br />
+              <input className="mt-3" placeholder="Start with 2547" />
+              <br />
+                <button
+                  type="button"
+                  title="Submit to authorize payment"
+                  className="btn btn-sm  me-5 float-end  btn-outline-success text-warning"
+                >
+                  Submit
+                </button>
+             
+            </div>
+
+            {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+          </div>
+        </div>
+      </div>
     </Container>
   );
 }
