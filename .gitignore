@@ -2,6 +2,7 @@
 
 # Dependency directories
 /node_modules
+/Lib/
 /.pnp
 .pnp.js
 
@@ -26,7 +27,7 @@
 /dist
 /.cache
 /.webpack
-/public
+
 
 # OS generated files
 .DS_Store
