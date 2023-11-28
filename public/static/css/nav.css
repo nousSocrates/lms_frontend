@@ -1,0 +1,103 @@
+/* Navigation */
+/* .side-nav {
+  position: fixed;
+  text-align: center;
+  top:3rem;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  transition: all ease-in-out 0.5s;
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 0 15px;
+  background: #040b14;
+  overflow-y: auto;
+}  */
+
+.side-nav .profile img {
+  display: block;
+  width: 4em;
+  height: 5em;
+  border: 3px solid #fd57bf;
+}
+
+.list-group {
+  list-style: none;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu a,
+.nav-menu a:focus {
+  color: #a8a9b4;
+  transition: 0.3s;
+}
+
+.nav-menu a i,
+.nav-menu a:focus i {
+  font-size: 24px;
+  padding-right: 8px;
+  color: #6f7180;
+}
+
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover > a {
+  text-decoration: none;
+  background: linear-gradient(to top, #ffe838, #fd57bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active:focus i,
+.nav-menu li:hover > a i {
+  color: #149ddd;
+}
+
+/* end of nav */
+
+/* Socials */
+.socials {
+  margin: 0 10px;
+  padding: 10px 0;
+}
+
+.bi-facebook {
+  color: #0818fdfa;
+  cursor: pointer;
+}
+
+.bi-twitter {
+  color: #0a72e9fa;
+  cursor: pointer;
+}
+
+.bi-whatsapp {
+  color: #0ff11bfa;
+  cursor: pointer;
+}
+
+.bi-linkedin {
+  color: #0818fdfa;
+  cursor: pointer;
+}
+
+.bi-instagram {
+  color: #f31414fa;
+  cursor: pointer;
+}
+.bi-youtube {
+  color: #f63838fa;
+  cursor: pointer;
+}
+.bi-pinterest {
+  color: #5e1313fa;
+  cursor: pointer;
+}
+/* end of socials */
