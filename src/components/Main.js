@@ -85,7 +85,7 @@ import RecommendedCourses from "./student/RecommendedCourses";
 import StudentPortal from "./student/StudentPortal";
 import StudentSideBar from "./student/StudentSideBar";
 
-import MpesaAPI from "./MPESA/MpesaAPI";
+import LipaNaMpesaForm from "./MPESA/LipaNaMpesaForm";
 //ROUTER
 import { Routes as Switch, Route } from "react-router-dom";
 
@@ -221,7 +221,7 @@ function Main() {
 
         <Route path="/student_logout" element={<StudentLogout />} />
         {/* MPESA ROUTES */}
-        <Route path="/mpesa" element={<MpesaAPI />} />
+        <Route path="/mpesa" element={<LipaNaMpesaForm />} />
       </Switch>
       <Footer />
     </div>

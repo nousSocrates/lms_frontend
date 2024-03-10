@@ -1,6 +1,7 @@
 // HOME COMPONENT
 
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import "../componentcss/home.css";
 import { Container } from "../componentcss/styledcss/Container.styled";
 import { useEffect, useState } from "react"; //for hooking titles
@@ -17,7 +18,7 @@ function Home() {
 
   //axios fetch courses when page loads
   useEffect(() => {
-    document.title = "SS | Home page";
+    // document.title = "SS | Home page";
     //fetch couses
     try {
       axios.get(baseUrl + "/courses/").then((res) => {
@@ -61,6 +62,15 @@ function Home() {
   }, []);
   return (
     <Container>
+      <Helmet>
+        <title>SS | Home</title>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/frontend/public/nousLog_1.jpg"
+          sizes="16x16"
+        />
+      </Helmet>
       {/* Landing Start */}
       <section className="h-50">
         <div className="landing">
@@ -204,8 +214,7 @@ function Home() {
         <div className="container-xxl py-5">
           <div className="container">
             <div className="text-center  wow fadeInUp" data-wow-delay="0.1s">
-          
-            <h1 className=" mb-5 fs-6 text-muted ">Latest Courses</h1>
+              <h1 className=" mb-5 fs-6 text-muted ">Latest Courses</h1>
             </div>
             <div className="row g-4 justify-content-center">
               {/* col 1 popular course */}
