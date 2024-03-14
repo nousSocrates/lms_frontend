@@ -67,7 +67,7 @@ function Home() {
         <link
           rel="icon"
           type="image/png"
-          href="/frontend/public/nousLog_1.jpg"
+          href="frontend/public/logo.jpg"
           sizes="16x16"
         />
       </Helmet>

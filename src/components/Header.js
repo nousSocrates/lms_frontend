@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"; // for linking
+import { Helmet } from "react-helmet";
 import { useState } from "react"; //for hooking
 function Header() {
   const teacherLoginStatus = localStorage.getItem("teacherLoginStatus");
@@ -28,6 +29,12 @@ function Header() {
     "-webkit-text-fill-color": "transparent",
     "user-select": "none",
   };
+  const logo = {
+    width: "45px",
+    height: "29px",
+    border: "1px solid yellow",
+    "border-radius": "5px",
+  };
 
   return (
     // Navbar Start -->
@@ -37,9 +44,10 @@ function Header() {
         className="navbar-brand d-flex align-items-center px-4 px-lg-5"
       >
         <h2 className="m-0 d-flex">
-          <i className="fa fa-1x fa-graduation-cap text-success"></i>
+          <img src="static/pixels/logo.jpg" className="logo" style={logo} />
+          {/* <i className="fa fa-1x fa-graduation-cap text-success"></i> */}
           <p
-            className="mt-1 fs-5 border-bottom border-success"
+            className="mt-1 fs-5 border-bottom border-secondary"
             style={logo_text}
           >
             Socrates Schools
@@ -93,7 +101,7 @@ function Header() {
       {/*end toggler */}
 
       <div className="collapse navbar-collapse me-8" id="navbarCollapse">
-        <div className="navbar-nav ms-auto p-4 p-lg-0">
+        <div className="navbar-nav ms-auto p-2 p-lg-0">
           <Link to="/" className="nav-item nav-link active">
             Home
           </Link>
