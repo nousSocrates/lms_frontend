@@ -67,13 +67,13 @@ function About() {
               Welcome to Socrates Schools
             </h5>
             <p className="text-secondary">
-              We are a dedicated, resourceful and goal-driven professional
+              We are dedicated, resourceful and goal-driven professional
               educators with a solid commitment to the intellectual, spiritual
               and social growth and development of every learner. <br />
               We have exceptional ability to establish cooperative and
-              professional relationships with parents, staff and
-              administrations, with diverse experience and strong track record
-              fostering learner-centered curriculum and student creativity.
+              professional relationships with parents. We have gained a diverse
+              experience and strong track record fostering learner-centered
+              curriculum and student creativity.
             </p>
             <div className="row gy-2 gx-4 mb-4">
               <div className="col-sm-6">

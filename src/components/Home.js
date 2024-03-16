@@ -75,9 +75,9 @@ function Home() {
       <section className="h-50">
         <div className="landing">
           <div className="landing-text">
-            <h1 className="fw-light ">Teacher Phelix</h1>
+            <h1 className="fw-light ">Socrates Schools</h1>
             <p className="fw-light text-secondary fs-5 ">
-              Welcome to my website
+              Welcome to our website
             </p>
             <hr />
             <div className="social-media">
