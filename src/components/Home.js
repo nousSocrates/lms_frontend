@@ -400,9 +400,10 @@ function Home() {
                 <img id="teacher" src="static/pixels/socratespurple.png" />
               </div>
               <p>
-                I am a highly qualified teacher of History, Religious Education
-                and Music, with an outstanding track record and teaching
-                experience of over five years.
+                We have highly qualified tutors of Music, Computer Science and
+                key Junior School Learning areas. Our mode of teaching includes
+                face to face, guided online tutorials, online classrooms among
+                others.
               </p>
             </div>
             <div className="skill" data-aos="fade-in" data-aos-delay="400">
@@ -411,10 +412,9 @@ function Home() {
                 <i className="fas fa-music"></i>
               </div>
               <p>
-                This is my passion. I am a qualified and renown choral music
-                trainer, music composer and Music Theory teacher. I have taken
-                church and student choral teams to the national music festivals
-                several times.
+                This is our pride. We offer choral and solo music training,
+                music composision and arrangement, and Music Theory teaching. We
+                are active in major Music Festivals like KMF and CLIMARK.
               </p>
             </div>
             <div className="skill" data-aos="fade-in" data-aos-delay="100">
@@ -423,10 +423,8 @@ function Home() {
                 <i className="fas fa-code"></i>
               </div>
               <p>
-                I develop professional websites and applications using different
-                technologies and programming languages. For front-end, I use
-                html, css, Bootstrap, JS and Jquery, and a blend of sql, php,
-                Python and NodeJs for back-end.
+                He, develop professional websites and applications using
+                different fullstack technologies and programming languages.
               </p>
             </div>
             <div className="skill" data-aos="fade-in" data-aos-delay="200">
@@ -435,9 +433,9 @@ function Home() {
                 <i className="fas fa-layer-group"></i>
               </div>
               <p>
-                I have a high aesthetic motive to develop RESPONSIVE websites
-                and applications that have attractive and navigables interfaces,
-                without limiting the content displayed to the users.
+                We are praised for a high aesthetic motive to develop RESPONSIVE
+                websites and applications that have attractive and navigables
+                interfaces, without limiting the content displayed to the users.
               </p>
             </div>
           </div>
@@ -604,7 +602,7 @@ function Home() {
                     />
                     <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3">
                       <h5 className="m-0">JSS</h5>
-                      <small className="text-primary">26 Learning Areas</small>
+                      <small className="text-primary">9 Learning Areas</small>
                     </div>
                   </a>
                 </div>
@@ -642,7 +640,7 @@ function Home() {
                     />
                     <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3">
                       <h5 className="m-0">ABRSM Music Theory</h5>
-                      <small className="text-primary">27 Courses</small>
+                      <small className="text-primary">8 Courses</small>
                     </div>
                   </a>
                 </div>
@@ -660,7 +658,7 @@ function Home() {
                 />
                 <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3">
                   <h5 className="m-0">KCSE CRE</h5>
-                  <small className="text-primary">49 Courses</small>
+                  <small className="text-primary">12 KNEC Question</small>
                 </div>
               </a>
             </div>
