@@ -658,7 +658,7 @@ function Home() {
                 />
                 <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3">
                   <h5 className="m-0">KCSE CRE</h5>
-                  <small className="text-primary">12 KNEC Question</small>
+                  <small className="text-primary">12 KNEC 313 Questions</small>
                 </div>
               </a>
             </div>

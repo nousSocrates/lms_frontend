@@ -30,15 +30,17 @@ const LipaNaMpesaForm = () => {
     }
   };
   //styles
-  const lmp_form = {
+  const lmp_row = {
     "font-family": ' "Courier New", Courier',
     "-webkit-background-clip": "text",
     background: "linear-gradient(to top, #ffe838, #fd57bf)",
-    "min-width": "50%",
-    "max-wdth": "60%",
-    border: "3px solid green",
+    border: "2px solid green",
     "border-radius": "3%",
-    padding: "1.5rem",
+    padding: "1rem",
+    "margin-top": "3rem",
+  };
+  const lmp_form = {
+    width: "75%",
   };
   return (
     <Container className="mt-6">
@@ -47,11 +49,11 @@ const LipaNaMpesaForm = () => {
         <div className="container">
           <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 className="section-title bg-white text-center text-primary px-3">
-              PAYMENTS
+              Lipa Na Mpesa
             </h6>
-            <h6 className="mb-2  text-muted ">Lipa na Mpesa</h6>
+            <h6 className="mb-2  text-muted ">Thank you for supporting us</h6>
           </div>
-          <div className="row g-4 justify-content-center">
+          <div className="row g-4 justify-content-center" style={lmp_row}>
             {/* course col start */}
 
             <form onSubmit={handleSubmit} style={lmp_form}>

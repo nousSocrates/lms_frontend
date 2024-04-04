@@ -52,6 +52,17 @@ function Contact() {
     }
   };
   //end
+  //styles
+  const contact_form = {
+    "font-family": ' "Courier New", Courier',
+    "-webkit-background-clip": "text",
+    background: "linear-gradient(to top, #ffe838, #fd57bf)",
+    "min-width": "50%",
+    "max-wdth": "60%",
+    border: "3px solid green",
+    "border-radius": "3%",
+    padding: "1.5rem",
+  };
   return (
     <Container>
       {/* <!--CONTACT  --> */}
@@ -86,11 +97,13 @@ function Contact() {
               className="col-lg-7 bg-dark card"
               data-aos="fade-up"
               data-aos-delay="200"
+              style={contact_form}
             >
               {/* <!-- <form action="" onsubmit="sendEmail(); reset(); return false;" method="post"> --> */}
               <form
                 // action="https://formspree.io/f/mrgdeaqp"
                 // method="POST"
+
                 className="p-1 mt-2 "
               >
                 <input
@@ -153,7 +166,7 @@ function Contact() {
                 <button
                   onClick={submitForm}
                   type="button"
-                  className="btn btn-sm btn-outline-success float-end me-4 mb-3"
+                  className="btn btn-sm btn-outline-success float-end me-4"
                 >
                   Send
                 </button>

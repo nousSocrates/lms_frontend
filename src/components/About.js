@@ -71,7 +71,7 @@ function About() {
               educators with a solid commitment to the intellectual, spiritual
               and social growth and development of every learner. <br />
               We have exceptional ability to establish cooperative and
-              professional relationships with parents. We have gained a diverse
+              professional relationships with parents, learners and key stakeholders. We have gained a diverse
               experience and strong track record fostering learner-centered
               curriculum and student creativity.
             </p>
