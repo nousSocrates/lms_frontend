@@ -85,7 +85,7 @@ function Footer() {
               </li>
               <li className="list-inline-item">
                 <a href="https://twitter.com/nousphellou">
-                  <i className="bi bi-twitter"></i>
+                <i className="fas fa-times twitter-x-icon"></i>
                 </a>
               </li>
               <li className="list-inline-item">

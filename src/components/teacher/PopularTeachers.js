@@ -24,7 +24,7 @@ function PopularTeachers() {
             <h6 className="section-title bg-white text-center text-primary px-3">
               Team
             </h6>
-            <h1 className="m-2 ">Experienced Teacher</h1>
+            <h1 className="m-2 ">Experienced Teachers</h1>
           </div>
           <div className="row g-4 justify-content-center">
             {/* team col start */}
@@ -37,13 +37,13 @@ function PopularTeachers() {
                   <Link to="/teacher_details/2">
                     <img
                       className="img-fluid"
-                      src="static/pixels/mozart.jpg"
+                      src="static/pixels/felo.jpg"
                       alt=""
                     />
                   </Link>
                 </div>
                 <div className="text-center p-3 pb-0">
-                  <h3 className="mb-0 text-dark">Phelix Ouma</h3>
+                  <h3 className="mb-0 text-dark">nousSocrates, SSO</h3>
                   <div className="mb-3">
                     <small className="fa fa-star text-primary"></small>
                     <small className="fa fa-star text-primary"></small>
@@ -85,7 +85,7 @@ function PopularTeachers() {
                   </Link>
                 </div>
                 <div className="text-center p-3 pb-0">
-                  <h3 className="mb-0 text-dark">Phelix Ouma</h3>
+                  <h3 className="mb-0 text-dark">Mr Bett, Moi Girls</h3>
                   <div className="mb-3">
                     <small className="fa fa-star text-primary"></small>
                     <small className="fa fa-star text-primary"></small>
@@ -120,13 +120,13 @@ function PopularTeachers() {
                   <Link to="/teacher_details/2">
                     <img
                       className="img-fluid"
-                      src="static/pixels/felo.jpg"
+                      src="static/pixels/mozart.jpg"
                       alt=""
                     />
                   </Link>
                 </div>
                 <div className="text-center p-3 pb-0">
-                  <h3 className="mb-0 text-dark">Phelix Ouma</h3>
+                  <h3 className="mb-0 text-dark">Mozart, ABRSM</h3>
                   <div className="mb-3">
                     <small className="fa fa-star text-primary"></small>
                     <small className="fa fa-star text-primary"></small>

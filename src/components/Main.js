@@ -84,7 +84,7 @@ import FavoriteCourses from "./student/FavoriteCourses";
 import RecommendedCourses from "./student/RecommendedCourses";
 import StudentPortal from "./student/StudentPortal";
 import StudentSideBar from "./student/StudentSideBar";
-
+//MPESA
 import LipaNaMpesaForm from "./MPESA/LipaNaMpesaForm";
 //ROUTER
 import { Routes as Switch, Route } from "react-router-dom";
