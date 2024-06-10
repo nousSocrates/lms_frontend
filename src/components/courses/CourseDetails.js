@@ -5,8 +5,8 @@ import { Container } from "../../componentcss/styledcss/Container.styled";
 import "../../componentcss/course_detail.css"; //for css
 import axios from "axios"; // used in fetching http request to the server
 import Swal from "sweetalert2";
-const siteUrl = "http://127.0.0.1:8000/";
-const baseUrl = "http://127.0.0.1:8000/api";
+
+import { baseUrl, siteUrl } from "../exports";
 
 function CourseDetails() {
   const [courseData, setCourseData] = useState([]);
@@ -252,16 +252,20 @@ function CourseDetails() {
   };
   return (
     <Container>
+    {/* <!--COURSE DETAILS  --> */}
+    <section className="contact" id="contact">
       <div className="container mt-3">
+  
         <div className="row">
-          <div className="col-4">
+    
+          <div className="col-lg-6">
             <img
               src={courseData.featured_image}
               className="h-100 p-3"
               alt={courseData.course_title}
             />
           </div>
-          <div className="col-8">
+          <div className="col-lg-6">
             <h3>{courseData.course_title}</h3>
             <p>{courseData.course_description}</p>
             <div className="">
@@ -678,6 +682,7 @@ function CourseDetails() {
           </div>
         </div>
       </div>
+      </section>
     </Container>
   );
 }

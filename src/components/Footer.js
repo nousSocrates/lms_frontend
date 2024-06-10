@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react"; //for hooking titles
 import axios from "axios"; // used in fetching http request to the server
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "./exports";
 
 function Footer() {
   const [pagesData, setPagesData] = useState([]);

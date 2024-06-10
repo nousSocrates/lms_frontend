@@ -5,7 +5,7 @@ import { Container } from "../../componentcss/styledcss/Container.styled";
 import "../../componentcss/course_detail.css"; //for css
 import axios from "axios"; // used in fetching http request to the server
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../exports";
 
 function TeacherDetail() {
   const [teacherData, setTeacherData] = useState([]);
@@ -33,14 +33,14 @@ function TeacherDetail() {
       <h5 className="mt-10">Teacher Details Page{teacher_id} </h5>
       <div className="container mt-3">
         <div className="row">
-          <div className="col-4">
+          <div className="col-lg-4">
             <img
               src={teacherData.profile_picture}
               className="h-100 p-3"
               alt="Profile"
             />
           </div>
-          <div className="col-8">
+          <div className="col-lg-8">
             <h3>{teacherData.surname + " " + teacherData.first_name}</h3>
             <p>
               {teacherData.about}

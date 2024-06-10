@@ -5,7 +5,7 @@ import TeacherSideBar from "./TeacherSideBar";
 import TeacherStudentChats from "./TeacherStudentChats";
 import { Container } from "../../componentcss/styledcss/Container.styled";
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../exports";
 
 function MyStudents() {
   const [studentData, setStudentData] = useState([]);

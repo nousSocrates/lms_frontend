@@ -5,7 +5,7 @@ import TeacherSideBar from "../../teacher/TeacherSideBar";
 import { Container } from "../../../componentcss/styledcss/Container.styled";
 import { useParams } from "react-router-dom";
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../../exports";
 
 function AddQuiz() {
   const [quizData, setQuizData] = useState({

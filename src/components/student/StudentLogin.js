@@ -10,7 +10,8 @@ import {
 } from "../../componentcss/styledcss/Container.styled";
 import "../../componentcss/login.css"; //for css
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../exports";
+import { ss_forms, ss_text } from "../exports";
 
 function StudentLogin() {
   const [studentLoginData, setStudentLoginData] = useState({
@@ -74,13 +75,13 @@ function StudentLogin() {
     <FormContainer>
       <Card className="card">
         <InnerBox>
-          <CardFront>
+          <CardFront >
             <h2>LOGIN</h2>
 
             {errorMessage && (
               <p className="text-danger fs-6 fw-light">{errorMessage}</p>
             )}
-            <Form method="POST" autocomplete="off">
+            <Form method="POST" autocomplete="off" style={ss_forms}>
               <input
                 onChange={handleChange}
                 type="username"

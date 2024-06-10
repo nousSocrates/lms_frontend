@@ -4,7 +4,8 @@ import TeacherSideBar from "./TeacherSideBar";
 import { Container } from "../../componentcss/styledcss/Container.styled";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-const baseUrl = "http://127.0.0.1:8000/api";
+
+import { baseUrl } from "../exports";
 
 function EditCourse() {
   const [categories, setCategories] = useState([]);

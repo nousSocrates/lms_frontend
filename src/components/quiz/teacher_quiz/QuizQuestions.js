@@ -3,7 +3,8 @@ import { useEffect, useState } from "react"; //for hooking
 import axios from "axios"; // used in fetching http request to the server
 import TeacherSideBar from "../../teacher/TeacherSideBar";
 import { Container } from "../../../componentcss/styledcss/Container.styled";
-const baseUrl = "http://127.0.0.1:8000/api";
+
+import { baseUrl } from "../../exports";
 
 function QuizQuestions() {
   const [questionData, setQuestionData] = useState([]);

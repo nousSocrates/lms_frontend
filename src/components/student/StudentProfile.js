@@ -4,7 +4,7 @@ import { Container } from "../../componentcss/styledcss/Container.styled";
 import axios from "axios"; // used in fetching http request to the server
 import Swal from "sweetalert2";
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../exports";
 
 function StudentProfile() {
   const [studentData, setStudentData] = useState({

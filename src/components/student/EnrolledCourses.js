@@ -4,7 +4,7 @@ import axios from "axios"; // used in fetching http request to the server
 import StudentSideBar from ".//StudentSideBar";
 import { Container } from "../../componentcss/styledcss/Container.styled";
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../exports";
 
 function EnrolledCourses() {
   const [courseData, setCourseData] = useState([]);

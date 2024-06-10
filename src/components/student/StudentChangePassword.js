@@ -4,7 +4,7 @@ import StudentSideBar from "./StudentSideBar";
 import { Container } from "../../componentcss/styledcss/Container.styled";
 import Swal from "sweetalert2";
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../exports";
 
 function StudentChangePassword() {
   const [studentData, setStudentData] = useState({

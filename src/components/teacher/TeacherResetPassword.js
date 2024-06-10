@@ -10,7 +10,7 @@ import {
 } from "../../componentcss/styledcss/Container.styled";
 import "../../componentcss/login.css"; //for css
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../exports";
 
 function TeacherResetPassword() {
   const [teacherData, setTeacherData] = useState({

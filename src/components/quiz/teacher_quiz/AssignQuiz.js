@@ -6,7 +6,7 @@ import TeacherSideBar from "../../teacher/TeacherSideBar";
 import { Container } from "../../../componentcss/styledcss/Container.styled";
 import CheckQuizInCourse from "./CheckQuizInCourse";
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../../exports";
 
 function AsignQuiz() {
   const [quizData, setQuizData] = useState([]);

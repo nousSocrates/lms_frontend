@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"; //for hooking
 import axios from "axios"; // used in fetching http request to the server
 import { Container } from "../../componentcss/styledcss/Container.styled";
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../exports";
 
 function StudentOTP() {
   const [studentOTP, setStudentOTP] = useState({
@@ -69,7 +69,7 @@ function StudentOTP() {
                 name="otp_code"
                 value={studentOTP.otp_code}
                 className=" p-1 mx-5 my-0"
-                placeholder="6-digits code"
+                placeholder="4-digits code"
                 required
               />
             </div>

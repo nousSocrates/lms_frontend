@@ -4,7 +4,8 @@ import { useEffect, useState } from "react"; //for hooking
 import axios from "axios"; // used in fetching http request to the server
 import TeacherSideBar from "./TeacherSideBar";
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "../exports";
+
 function TeacherDashboard() {
   const [dashboardData, setDashboardData] = useState([]);
   const teacher_id = localStorage.getItem("teacher_id");

@@ -7,7 +7,7 @@ import { Container } from "../componentcss/styledcss/Container.styled";
 import { useEffect, useState } from "react"; //for hooking titles
 import axios from "axios"; // used in fetching http request to the server
 
-const baseUrl = "http://127.0.0.1:8000/api";
+import { baseUrl } from "./exports";
 
 function Home() {
   const [courseData, setCourseData] = useState([]);
@@ -214,7 +214,7 @@ function Home() {
         <div className="container-xxl py-5">
           <div className="container">
             <div className="text-center  wow fadeInUp" data-wow-delay="0.1s">
-              <h1 className=" mb-5 fs-6 text-muted ">Latest Courses</h1>
+              <h1 className=" mb-5 fs-6 text-muted ">Popular Courses</h1>
             </div>
             <div className="row g-4 justify-content-center">
               {/* col 1 popular course */}
@@ -314,7 +314,7 @@ function Home() {
             <h6 className="section-title bg-white text-center text-primary px-3">
               Team
             </h6>
-            <h1 className="mb-5 fs-6 text-muted ">Experienced Teachers</h1>
+            <h1 className="mb-5 fs-6 text-muted ">Experienced Facilitators</h1>
           </div>
           <div className="row g-4 justify-content-center">
             {/* team col start */}
@@ -402,7 +402,7 @@ function Home() {
               <p>
                 We have highly qualified tutors of Music, Computer Science and
                 key Junior School Learning areas. Our mode of teaching includes
-                face to face, guided online tutorials, online classrooms among
+                face to face, guided online tutorials, online classroom platforms among
                 others.
               </p>
             </div>
@@ -427,7 +427,7 @@ function Home() {
                 different fullstack technologies and programming languages.
               </p>
             </div>
-            <div className="skill" data-aos="fade-in" data-aos-delay="200">
+            {/* <div className="skill" data-aos="fade-in" data-aos-delay="200">
               <h1>Web Design</h1>
               <div className="icon-container">
                 <i className="fas fa-layer-group"></i>
@@ -437,9 +437,9 @@ function Home() {
                 websites and applications that have attractive and navigables
                 interfaces, without limiting the content displayed to the users.
               </p>
-            </div>
+            </div> */}
           </div>
-
+          {/* animations skills */}
           {/* <div className="container skill-wrapper">
             <div className="code-heading">
               <h1>Coding Skills</h1>
@@ -499,13 +499,15 @@ function Home() {
                 </Link>
               </div>
             </div>
-          </div> */}
+          </div>
+          {/* end of animation skills */}
+          
         </div>
-      </section>
+      </section> 
       {/* end Skills */}
 
       {/* // Service Start */}
-      <div className="container-xxl py-5 mt-55">
+      {/* <div className="container-xxl py-5 mt-55">
         <div className="container ">
           <div className="row g-4">
             <div
@@ -571,7 +573,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* //Service End  */}
 
       {/* Categories Start */}

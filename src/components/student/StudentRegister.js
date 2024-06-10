@@ -10,6 +10,9 @@ import {
 } from "../../componentcss/styledcss/Container.styled";
 import "../../componentcss/register.css"; //for css
 
+import { baseUrl } from "../exports";
+import { ss_forms, ss_text } from "../exports";
+
 function StudentRegister() {
   useEffect(() => {
     document.title = "SS | Student Register";
@@ -50,7 +53,7 @@ function StudentRegister() {
 
     try {
       axios
-        .post("http://127.0.0.1:8000/api/student/", studentFormData)
+        .post(baseUrl + "/student/", studentFormData)
         .then((response) => {
           navigate("/verify_student/" + response.data.id);
           //   setStudentData({
@@ -69,14 +72,6 @@ function StudentRegister() {
     }
   };
   //end
- //CSS
- const logo_text = {
-  "background": "linear-gradient(to top, #ffe838, #fd57bf)",
-  "font-family": ' "Courier New", Courier',
-  "-webkit-background-clip": "text",
-  "-webkit-text-fill-color": "transparent",
-  "user-select": "none",
-};
 
   return (
     <FormContainer>
@@ -84,7 +79,7 @@ function StudentRegister() {
         <InnerBox>
           <CardFront>
             <h2>REGISTER</h2>
-            <Form method="POST" autocomplete="off" novalidate>
+            <Form method="POST"  style={ss_forms} autocomplete="off" novalidate>
               {studentData.status === "success" && (
                 <p className="text-success">
                   Your are now registered, Please login
@@ -170,7 +165,7 @@ function StudentRegister() {
                   <Link to="/student_login"> Login</Link>
                 </p>
               </div>
-              <span style={logo_text}> &copy;Socrates Schools</span>
+              <span style={ss_text}> &copy;Socrates Schools</span>
             </Form>
           </CardFront>
         </InnerBox>

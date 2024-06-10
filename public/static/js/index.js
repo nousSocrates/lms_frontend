@@ -43,6 +43,7 @@ $(document).ready(function () {
     duration: 1800,
   });
 });
+
 /**
  * Skills animation
  */

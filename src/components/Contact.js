@@ -2,7 +2,8 @@ import { Container } from "../componentcss/styledcss/Container.styled";
 import { useEffect, useState } from "react"; //for hooking
 import axios from "axios"; // used in fetching http request to the server
 
-const baseUrl = "http://127.0.0.1:8000/api/contact/";
+import { baseUrl } from "./exports";
+
 function Contact() {
   const [contactUsData, setContactUsData] = useState({
     full_name: "",
@@ -36,7 +37,7 @@ function Contact() {
     contactUsFormData.append("message", contactUsData.message);
 
     try {
-      axios.post(baseUrl, contactUsFormData).then((response) => {
+      axios.post(baseUrl + "/contact/", contactUsFormData).then((response) => {
         setContactUsData({
           full_name: "",
           phone_number: "",

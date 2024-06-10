@@ -10,6 +10,9 @@ import {
 } from "../../componentcss/styledcss/Container.styled";
 import "../../componentcss/register.css"; //for css
 
+import { baseUrl } from "../exports";
+import { ss_text, ss_forms } from "../exports";
+
 function TeacherRegister() {
   useEffect(() => {
     document.title = "SS | Teacher Register";
@@ -48,7 +51,7 @@ function TeacherRegister() {
 
     try {
       axios
-        .post("http://127.0.0.1:8000/api/teacher/", teacherFormData)
+        .post(baseUrl + "/teacher/", teacherFormData)
         .then((response) => {
           navigate("/verify_teacher/" + response.data.id);
           //window.location.href = "/verify_teacher/" + response.data.id;
@@ -69,7 +72,7 @@ function TeacherRegister() {
   };
   //end
   //CSS
-  const logo_text = {
+  const ss_text = {
     "background": "linear-gradient(to top, #ffe838, #fd57bf)",
     "font-family": ' "Courier New", Courier',
     "-webkit-background-clip": "text",
@@ -158,7 +161,7 @@ function TeacherRegister() {
                   <Link to="/teacher_login" className=""> Login</Link>
                 </p>
               </div>
-              <span style={logo_text}> &copy;Socrates Schools</span>
+              <span style={ss_text}> &copy;Socrates Schools</span>
             </Form>
           </CardFront>
         </InnerBox>

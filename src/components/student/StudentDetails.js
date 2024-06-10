@@ -4,7 +4,8 @@ import { Link } from "react-router-dom"; // for linking
 import { Container } from "../../componentcss/styledcss/Container.styled";
 import "../../componentcss/course_detail.css"; //for css
 
-const baseUrl = "http://127.0.0.1:8000/api/";
+import { baseUrl } from "../exports";
+
 const getBtn = document.getElementById("get_btn");
 const postBtn = document.getElementById("post_btn");
 
