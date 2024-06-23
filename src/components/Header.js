@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"; // for linking
 // import { Helmet } from "react-helmet";
 // import { useState } from "react"; //for hooking
 function Header() {
-  // const teacherLoginStatus = localStorage.getItem("teacherLoginStatus");
+  const teacherLoginStatus = localStorage.getItem("teacherLoginStatus");
   const studentLoginStatus = localStorage.getItem("studentLoginStatus");
 
   // const [searchString, setSearchString] = useState({
@@ -115,7 +115,7 @@ function Header() {
             Contact
           </Link>
 
-          {/* <div className="nav-item dropdown">
+          <div className="nav-item dropdown">
             <Link
               className="nav-link dropdown-toggle"
               data-bs-toggle="dropdown"
@@ -159,7 +159,7 @@ function Header() {
                 </>
               )}
             </ul>
-          </div> */}
+          </div>
           <div className="nav-item dropdown">
             <Link
               className="nav-link dropdown-toggle"

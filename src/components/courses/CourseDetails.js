@@ -554,7 +554,7 @@ function CourseDetails() {
                 Related Courses
               </h6>
               <h1 className="mb-5 fs-6 text-muted">You may be interested</h1>
-              {/* testing Carousel */}
+              {/* Carousel */}
               <div
                 id="carouselExampleIndicators"
                 className="carousel slide bg- text-white py-5"

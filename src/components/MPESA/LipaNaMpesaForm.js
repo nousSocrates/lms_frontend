@@ -1,5 +1,5 @@
 import { Container } from "../../componentcss/styledcss/Container.styled";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 // import axios from "axios";
 import Swal from "sweetalert2";
@@ -77,16 +77,15 @@ const LipaNaMpesaForm = () => {
     "min-width":"275px",
     "max-width":"500px",
     "border-radius":"10px",
-    padding:"10px",
+    padding:"30px",
 
 
   }
 
-
   return (
     <Container className="mt-6">
       <div className="container-xxl py-5">
-        {/* Start category */}
+    
         <div className="container">
           <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 className="section-title bg-white text-center text-primary px-3">
@@ -95,8 +94,6 @@ const LipaNaMpesaForm = () => {
             <h6 className="mb-2  text-success ">Thank you for supporting us</h6>
           </div>
           <div className="row g-4 justify-content-center">
-            {/* course col start */}
-
             <form onSubmit={handleSubmit} style={form_field}>
               <label htmlFor="PhoneNumber">Phone Number:</label>
               <input
@@ -118,17 +115,25 @@ const LipaNaMpesaForm = () => {
                 onChange={(e) => setAmount(e.target.value)}
                 required
               />
-
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className="btn btn-sm btn-outline-light text-success float-end me-3 fs-5"
+                className="btn btn-sm btn-outline-success text-light float-end me-2 fs-5"
               >Donate
-              </button>
+              </button> 
+              <hr className="text-success mt-5"/>
+              <p className="text-light fs-4 bg-success">Other Payment Methods </p>
+              <div className="pb-5 m-2">
+                <Link to="/paypal" className="ms-5 text-decoration-none">
+                  <button className="btn btn-sm btn-outline-light text-primary fs-5 float-start ms-5">PayPal</button>
+                </Link>
+                <Link to="/paypal" className="ms-5 text-decoration-none">
+                  <button className="btn btn-sm btn-outline-light text-danger fs-5 float-end me-5 ">ATM</button>
+                </Link>
+              </div>
             </form>
-
-            {/* course col end */}
           </div>
+     
         </div>
       </div>
     </Container>

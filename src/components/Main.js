@@ -1,4 +1,7 @@
 // Import components here
+//ROUTER
+import { Routes as Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // HOME IMPORTS
 import Header from "./Header";
@@ -84,10 +87,11 @@ import FavoriteCourses from "./student/FavoriteCourses";
 import RecommendedCourses from "./student/RecommendedCourses";
 import StudentPortal from "./student/StudentPortal";
 import StudentSideBar from "./student/StudentSideBar";
-//MPESA
+
+//PAYMENTS
 import LipaNaMpesaForm from "./MPESA/LipaNaMpesaForm";
-//ROUTER
-import { Routes as Switch, Route } from "react-router-dom";
+import PayPalForm from "./PayPal/PayPalForm";
+
 
 function Main() {
   return (
@@ -220,11 +224,14 @@ function Main() {
         <Route path="/student_assignments" element={<StudentAssignments />} />
 
         <Route path="/student_logout" element={<StudentLogout />} />
-        {/* MPESA ROUTES */}
+        {/* PAYMENT ROUTES */}
         <Route path="/mpesa" element={<LipaNaMpesaForm />} />
+        <Route path="/paypal" element={<PayPalForm />} />
       </Switch>
       <Footer />
     </div>
   );
 }
 export default Main;
+
+
