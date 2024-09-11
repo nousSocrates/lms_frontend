@@ -116,7 +116,7 @@ function Footer() {
             </ul>
           </div>
           <div className="fw-light fs-6">
-            &copy;April 2023, Inc<br></br>SOCRATES SCHOOLS<br></br>
+            &copy;2024, Inc<br></br>SOCRATES SCHOOLS<br></br>
           </div>
         </footer>
       </div>

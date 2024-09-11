@@ -483,7 +483,7 @@ function CourseDetails() {
               <div className="card-header">
                 <h3 className="text-success"> Course Strands </h3>
               </div>
-              <ul className="container list-group list-group-flash">
+              <ul className="container-fluid list-group list-group-flash">
                 {/* data mapping for course strands */}
                 {strandData.map((strand, index) => (
                   <li className="list-group-item">
@@ -546,14 +546,14 @@ function CourseDetails() {
             </div>
           )}
 
-        {/* Testimonial Start --> */}
+        {/* Related Start --> */}
         <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
           <div className="container">
             <div className="text-center">
-              <h6 className="section-title bg-white text-center text-primary px-3">
+              {/* <h6 className="section-title bg-white text-center text-primary px-3">
                 Related Courses
               </h6>
-              <h1 className="mb-5 fs-6 text-muted">You may be interested</h1>
+              <h1 className="mb-5 fs-6 text-muted">You may be interested</h1> */}
               {/* Carousel */}
               <div
                 id="carouselExampleIndicators"
@@ -561,7 +561,7 @@ function CourseDetails() {
                 data-bs-ride="carousel"
               >
                 <div className="carousel-indicators">
-                  {relatedCoursesData &&
+                  {/* {relatedCoursesData &&
                     relatedCoursesData.map((row, index) => (
                       <button
                         type="button"
@@ -571,9 +571,9 @@ function CourseDetails() {
                         aria-current="true"
                         // aria-label={row.student.username}
                       ></button>
-                    ))}
+                    ))} */}
                 </div>
-                {relatedCoursesData &&
+                {/* {relatedCoursesData &&
                   relatedCoursesData.map((row, i) => (
                     <div className="carousel-inner container">
                       <div
@@ -652,8 +652,8 @@ function CourseDetails() {
                         </div>
                       </div>
                     </div>
-                  ))}
-                <button
+                  ))} */}
+                {/* <button
                   className="carousel-control-prev"
                   type="button"
                   data-bs-target="#carouselExampleIndicators"
@@ -676,7 +676,7 @@ function CourseDetails() {
                     aria-hidden="true"
                   ></span>
                   <span className="visually-hidden">Next</span>
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

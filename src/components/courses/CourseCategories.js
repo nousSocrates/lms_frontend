@@ -11,7 +11,7 @@ function CourseCategory() {
   useEffect(() => {
     document.title = "SS | Course Categories";
 
-    //axios fetch courses when page loads
+    //axios fetch courses categories when page loads
     try {
       axios.get(baseUrl + "/course_categories/").then((res) => {
         setCategoryeData(res.data);
@@ -48,8 +48,8 @@ function CourseCategory() {
                       </h6>
                       <p className="card-text text-dark"> {row.description}</p>
                       <small className="text-dark">
-                        Total Courses:
-                        <span className="badge bg-info">
+                        <span className="badge bg-info py-2">Total Courses:</span>
+                        <span className="badge bg-warning py-2 m-0">
                           {row.total_category_courses}
                         </span>
                       </small>

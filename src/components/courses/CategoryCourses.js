@@ -8,6 +8,7 @@ import { baseUrl } from "../exports";
 
 function CategoryCourses() {
   const [courseData, setCourseData] = useState([]);
+  const [teacherData, setTeacherData] = useState([]);
   const [nextUrl, setNextUrl] = useState();
   const [previousUrl, setPreviousUrl] = useState();
 
@@ -49,68 +50,74 @@ function CategoryCourses() {
           <div className="row g-4 justify-content-center">
             {/* course col start */}
             {courseData &&
-              courseData.map((course, index) => (
+              courseData.map((row, index) => (
                 <div
-                  className="col-lg-4 col-md-6 wow fadeInUp"
+                  className="col-lg-4 col-md-4 col-sm-6 wow fadeInUp"
                   data-wow-delay="0.3s"
                 >
                   <div className="course-item bg-light">
                     <div className="position-relative overflow-hidden">
-                      <Link to={"/course_details/" + course.id}>
+                      <Link to={"/course_details/" + row.id}>
                         <img
                           className="img-fluid"
-                          src={course.featured_image}
-                          alt={course.course_title}
+                          src={row.featured_image}
+                          alt={row.course_title}
                         />
                       </Link>
                       <div className="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                        <a
-                          href="#"
-                          className="flex-shrink-0 btn btn-sm btn-info px-3 border-end"
+                        <Link
+                          to={"/course_details/" + row.id}
+                          className="flex-shrink-0 btn btn-sm btn-info fw-light border-end"
                         >
                           Read More
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href="#"
                           className="flex-shrink-0 btn btn-sm btn-success px-3"
                         >
                           Join Now
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="text-center p-3 pb-0">
-                      <h3 className="mb-0 text-success">KSHS 4500</h3>
-                      <div className="mb-3">
-                        <small className="fa fa-star text-primary"></small>
-                        <small className="fa fa-star text-primary"></small>
-                        <small className="fa fa-star text-primary"></small>
-                        <small className="fa fa-star text-primary"></small>
-                        <small className="fa fa-star text-primary"></small>
-                        <small>(123)</small>
-                      </div>
-                      <h5 className="mb-4">
-                        <Link to={"/course_details/" + course.id}>
-                          {course.course_title}
+                      <h4 className="mb-2">
+                        <Link
+                          to={"/course_details/" + row.id}
+                          className="text-decoration-none fw-bolder "
+                        >
+                          {row.course_title}
                         </Link>
-                      </h5>
+                      </h4>
+                      <h6 className="mb-0  text-warning bg-success py-2">
+                        <span className="text-decoration-line-through text-dark me-2">
+                          KSHS {row.prev_price}
+                        </span>
+                        KSHS {row.current_price}
+                      </h6>
                     </div>
                     <div className="d-flex border-top text-dark">
+                      {teacherData &&
+                        teacherData.map((row, index) => (
+                          <small className="flex-fill text-center border-end py-2">
+                            <i className="fa fa-user-tie text-primary me-2"></i>{" "}
+                            {row.surname + " " + row.first_name}
+                          </small>
+                        ))}
+
                       <small className="flex-fill text-center border-end py-2">
-                        <i className="fa fa-user-tie text-primary me-2"></i>John
-                        Doe
-                      </small>
-                      <small className="flex-fill text-center border-end py-2">
-                        <i className="fa fa-clock text-primary me-2"></i>1.49
-                        Hrs
+                        <i className="fa fa-clock text-primary me-2"></i>
+                        {row.duration}
                       </small>
                       <small className="flex-fill text-center py-2">
-                        <i className="fa fa-user text-primary me-2"></i>30
+                        <i className="fa fa-user text-primary me-2"></i>
+                        {24 + row.total_enrolled_students + " "}
                         Students
                       </small>
                     </div>
                   </div>
                 </div>
               ))}
+            {/* course col end */}{" "}
             {/* course col end */}
           </div>
           {/* pagination start */}
@@ -126,7 +133,7 @@ function CategoryCourses() {
                   </button>
                 </li>
               )}
-              {/* <li className="page-item">
+              <li className="page-item">
                 <Link className="page-link" to="">
                   1
                 </Link>
@@ -140,7 +147,7 @@ function CategoryCourses() {
                 <Link className="page-link" to="">
                   3
                 </Link>
-              </li> */}
+              </li>
               {nextUrl && (
                 <li className="page-item">
                   <button

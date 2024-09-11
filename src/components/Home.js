@@ -1,4 +1,4 @@
-// HOME COMPONENT
+
 
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -15,6 +15,9 @@ function Home() {
   const [popularCourseData, setPopularCourseData] = useState([]);
   const [popularTeacherData, setPopularTeacherData] = useState([]);
   const [testimonialData, setTestimonialData] = useState([]);
+  const [categoryData, setCategoryeData] = useState([]);
+
+
 
   //axios fetch courses when page loads
   useEffect(() => {
@@ -35,14 +38,14 @@ function Home() {
     } catch (error) {
       console.log(error);
     }
-    // fetch popular teachers
-    try {
-      axios.get(baseUrl + "/popular_teachers/?popular").then((res) => {
-        setPopularTeacherData(res.data);
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    // // fetch popular teachers
+    // try {
+    //   axios.get(baseUrl + "/popular_teachers/?popular").then((res) => {
+    //     setPopularTeacherData(res.data);
+    //   });
+    // } catch (error) {
+    //   console.log(error);
+    // }
     // fetch popular teachers
     try {
       axios.get(baseUrl + "/popular_teachers/?pop_tchr_courses").then((res) => {
@@ -59,6 +62,17 @@ function Home() {
     } catch (error) {
       console.log(error);
     }
+
+    //axios fetch courses categories when page loads
+    try {
+      axios.get(baseUrl + "/course_categories/").then((res) => {
+        setCategoryeData(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+
   }, []);
   return (
     <Container>
@@ -135,7 +149,7 @@ function Home() {
             {courseData &&
               courseData.map((row, index) => (
                 <div
-                  className="col-lg-4 col-md-6 wow fadeInUp"
+                  className="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
                   data-wow-delay="0.3s"
                 >
                   <div className="course-item bg-light">
@@ -166,16 +180,17 @@ function Home() {
                       <h4 className="mb-2">
                         <Link
                           to={"/course_details/" + row.id}
-                          className="text-decoration-none fw-bolder "
+                          className="text-decoration-none fw-lighter fs-5"
                         >
                           {row.course_title}
                         </Link>
                       </h4>
-                      <h6 className="mb-0  text-warning bg-success">
+                      <h6 className="mb-0  text-warning bg-success py-2">
                         <span className="text-decoration-line-through text-dark me-2">
                           KSHS {row.prev_price}
                         </span>
-                        KSHS {row.current_price}
+                        <span className="badge bg-warning m-0"> KSHS {row.current_price}</span>
+                       
                       </h6>
                     </div>
                     <div className="d-flex border-top text-dark">
@@ -204,7 +219,7 @@ function Home() {
           </div>
         </div>
 
-        <Link to="/latest_courses" className="text-primary float-end">
+        <Link to="/latest_courses" className="text-primary float-end badge bg-info p-2">
           See All
         </Link>
 
@@ -221,7 +236,7 @@ function Home() {
               {popularCourseData &&
                 popularCourseData.map((row, index) => (
                   <div
-                    className="col-lg-4 col-md-6 wow fadeInUp"
+                    className="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
                     data-wow-delay="0.3s"
                   >
                     <div className="course-item bg-light">
@@ -252,7 +267,7 @@ function Home() {
                         <h4 className="mb-2">
                           <Link
                             to={"/course_details/" + row.course.id}
-                            className="text-decoration-none fw-bolder "
+                            className="text-decoration-none fw-lighter fs-5"
                           >
                             {row.course.course_title}
                           </Link>
@@ -268,7 +283,7 @@ function Home() {
                             {row.rating}/5
                           </span>
                         </div>
-                        <h6 className="mb-0  text-warning bg-success">
+                        <h6 className="mb-0  text-warning bg-success py-2">
                           <span className="text-decoration-line-through text-dark me-2">
                             KSHS {row.course.prev_price}
                           </span>
@@ -322,7 +337,7 @@ function Home() {
             {popularTeacherData &&
               popularTeacherData.map((row, index) => (
                 <div
-                  className="col-lg-4 col-md-6 wow fadeInUp"
+                  className="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
                   data-wow-delay="0.3s"
                 >
                   <div className="course-item bg-light">
@@ -579,7 +594,7 @@ function Home() {
       {/* Categories Start */}
 
       <div className="container-xxl py-5 category">
-        <div className="container">
+        <div className="container-fluid">
           <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 className="section-title bg-white text-center text-primary px-3">
               Categories
@@ -587,10 +602,13 @@ function Home() {
             <h1 className="mb-5 fs-6 text-muted">Course Categories</h1>
           </div>
           <div className="row g-3">
-            <div className="col-lg-7 col-md-6">
+            <div className="col-lg-12 col-md-6">
               <div className="row g-3">
+                            {/* course col start */}
+            {categoryData &&
+              categoryData.map((row, index) => (
                 <div
-                  className="col-lg-12 col-md-12 wow zoomIn"
+                  className="col-lg-3 col-md-3 col-sm-6 wow zoomIn"
                   data-wow-delay="0.1s"
                 >
                   <a
@@ -603,12 +621,18 @@ function Home() {
                       alt=""
                     />
                     <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3">
-                      <h5 className="m-0">JSS</h5>
-                      <small className="text-primary">9 Learning Areas</small>
+                    <Link to={"/courses/" + row.id + '/'+ row.title} className="fs-4 fw-1 text-decoration-none">
+                          {row.title}
+                        </Link> <br/>
+                        <span className="badge bg-info py-2">Total Courses:</span>
+                        <span className="badge bg-warning py-2 m-0">
+                          {row.total_category_courses}
+                        </span>
                     </div>
                   </a>
                 </div>
-                <div
+              ))}
+                {/* <div
                   className="col-lg-6 col-md-12 wow zoomIn"
                   data-wow-delay="0.3s"
                 >
@@ -626,11 +650,11 @@ function Home() {
                       <small className="text-primary">49 Courses</small>
                     </div>
                   </a>
-                </div>
-                <div
+                </div> */}
+                {/* <div
                   className="col-lg-6 col-md-12 wow zoomIn"
                   data-wow-delay="0.5s"
-                >
+                  >
                   <a
                     className="position-relative d-block overflow-hidden"
                     href=""
@@ -641,14 +665,16 @@ function Home() {
                       alt=""
                     />
                     <div className="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3">
-                      <h5 className="m-0">ABRSM Music Theory</h5>
+                      <h5 className="m-0">
+                      <Link to={courses}>ABRSM Music Theory</Link>  
+                      </h5>
                       <small className="text-primary">8 Courses</small>
                     </div>
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
-            <div className="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s">
+            {/* <div className="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s">
               <a
                 className="position-relative d-block h-100 overflow-hidden"
                 href=""
@@ -663,15 +689,15 @@ function Home() {
                   <small className="text-primary">12 KNEC 313 Questions</small>
                 </div>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
       {/* end of categories */}
 
       {/* Testimonial Start --> */}
-      <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div className="container">
+      <div className="container-fluid-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div className="container-fluid ">
           <div className="text-center">
             <h6 className="section-title bg-white text-center text-primary px-3">
               Testimonial
@@ -680,7 +706,7 @@ function Home() {
             {/* testing Carousel */}
             <div
               id="carouselExampleIndicators"
-              className="carousel slide bg-dark text-white py-5"
+              className="carousel slide col-lg-12 col-sm-12 bg-warning text-white py-5"
               data-bs-ride="carousel"
             >
               <div className="carousel-indicators">
@@ -696,7 +722,7 @@ function Home() {
                     ></button>
                   ))}
               </div>
-              <div className="carousel-inner">
+              <div className="carousel-inner ">
                 {testimonialData &&
                   testimonialData.map((row, i) => (
                     <div
@@ -706,7 +732,7 @@ function Home() {
                           : "carousel-item text-center "
                       }
                     >
-                      <figure className="text-center ">
+                      <figure className="text-center bg-dark py-3">
                         <blockquote className="blockquote">
                           <figcaption className=" mt-2 me-5 fw-light text-success fs-6">
                             {row.course.course_title}

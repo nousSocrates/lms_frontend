@@ -1,10 +1,78 @@
 import { Container } from "../componentcss/styledcss/Container.styled";
 import { Link } from "react-router-dom";
-import { useEffect } from "react"; //for hooking titles
+import { useEffect, useState} from "react"; //for hooking titles
+
+import { Helmet } from "react-helmet";
+import "../componentcss/home.css";
+import axios from "axios"; // used in fetching http request to the server
+
+import { baseUrl } from "./exports";
+
 function About() {
+  const [courseData, setCourseData] = useState([]);
+  const [teacherData, setTeacherData] = useState([]);
+  const [popularCourseData, setPopularCourseData] = useState([]);
+  const [popularTeacherData, setPopularTeacherData] = useState([]);
+  const [testimonialData, setTestimonialData] = useState([]);
+  const [categoryData, setCategoryeData] = useState([]);
+
+
+
+  //axios fetch courses when page loads
   useEffect(() => {
     document.title = "SS | About";
-  });
+    //fetch couses
+    try {
+      axios.get(baseUrl + "/courses/").then((res) => {
+        setCourseData(res.data.results);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    //fetch popular courses
+    try {
+      axios.get(baseUrl + "/popular_courses/?popular=1").then((res) => {
+        setPopularCourseData(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    // fetch popular teachers
+    try {
+      axios.get(baseUrl + "/popular_teachers/?popular").then((res) => {
+        setPopularTeacherData(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    // fetch popular teachers
+    try {
+      axios.get(baseUrl + "/popular_teachers/?pop_tchr_courses").then((res) => {
+        setPopularTeacherData(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    // fetch student testimonials
+    try {
+      axios.get(baseUrl + "/student_testimonial/").then((res) => {
+        setTestimonialData(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+    //axios fetch courses categories when page loads
+    try {
+      axios.get(baseUrl + "/course_categories/").then((res) => {
+        setCategoryeData(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+
+  }, []);
   return (
     <Container className="mt-6">
       <section className="about mt-5" id="about">
@@ -77,16 +145,16 @@ function About() {
             </p>
             <div className="row gy-2 gx-4 mb-4">
               <div className="col-sm-6">
-                <p className="mb-0 text-warning">
+                <Link to={'/popular_teachers'} className="mb-0 text-decoration-none text-warning">
                   <i className="fa fa-arrow-right text-primary me-2"></i>
                   Skilled Instructors
-                </p>
+                </Link>
               </div>
               <div className="col-sm-6 text-info">
-                <p className="mb-0">
+                <Link to={'/popular_courses'} className="mb-0 text-decoration-none">
                   <i className="fa fa-arrow-right text-primary me-2"></i>
-                  Online Classes
-                </p>
+                  Online Courses
+                </Link>
               </div>
               <div className="col-sm-6">
                 <p className="mb-0 text-primary">

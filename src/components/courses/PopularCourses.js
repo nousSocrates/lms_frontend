@@ -22,9 +22,9 @@ function PopularCourses() {
     <Container className="mt-6">
       {/* Courses Start */}
 
-      <div className="container-xxl py-5">
+      <div className="container-fluid-xxl py-5">
         {/* Start Latest Courses */}
-        <div className="container">
+        <div className="container-fluid">
           <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 className="section-title bg-white text-center text-primary px-3">
               Courses
@@ -36,7 +36,7 @@ function PopularCourses() {
             {popularCourseData &&
               popularCourseData.map((row, index) => (
                 <div
-                  className="col-lg-4 col-md-6 wow fadeInUp"
+                  className="col-lg-2 col-md-4 col-sm-6 wow fadeInUp"
                   data-wow-delay="0.3s"
                 >
                   <div className="course-item bg-light">
@@ -67,7 +67,7 @@ function PopularCourses() {
                       <h4 className="mb-2">
                         <Link
                           to={"/course_details/" + row.course.id}
-                          className="text-decoration-none fw-bolder "
+                          className="text-decoration-none fs-5 fw-bolder "
                         >
                           {row.course.course_title}
                         </Link>

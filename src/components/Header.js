@@ -1,27 +1,27 @@
 import { Link } from "react-router-dom"; // for linking
 // import { Helmet } from "react-helmet";
-// import { useState } from "react"; //for hooking
+import { useState } from "react"; //for hooking
 function Header() {
   const teacherLoginStatus = localStorage.getItem("teacherLoginStatus");
   const studentLoginStatus = localStorage.getItem("studentLoginStatus");
 
-  // const [searchString, setSearchString] = useState({
-  //   search: "",
-  // });
+  const [searchString, setSearchString] = useState({
+    search: "",
+  });
 
   
-  // const handleChange = (event) => {
-  //   setSearchString({
-  //     ...searchString,
-  //     [event.target.name]: event.target.value,
-  //   });
-  // };
+  const handleChange = (event) => {
+    setSearchString({
+      ...searchString,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-  // const searchCourse = () => {
-  //   if (searchString.search !== "") {
-  //     window.location.href = "/search/" + searchString.search;
-  //   }
-  // };
+  const searchCourse = () => {
+    if (searchString.search !== "") {
+      window.location.href = "/search/" + searchString.search;
+    }
+  };
   const logo_text = {
     background: "linear-gradient(to top, #ffe838, #fd57bf)",
     "font-family": ' "Courier New", Courier',
@@ -54,7 +54,7 @@ function Header() {
           </p>
         </h2>
       </Link>
-      {/* <form className="d-flex ms-3">
+      <form className="d-flex ms-3">
         <input
           name="search"
           className="form-control p-1 h-25"
@@ -72,14 +72,14 @@ function Header() {
             <i className="fa fa-search m-1 text-success "></i>
           </button>
         </span>
-      </form> */}
-      <Link to="/mpesa" className="ms-5 text-decoration-none">
+      </form>
+      <Link to="/mpesa" className="ms-0 text-decoration-none">
         <button
           type="button"
-          className="btn btn-sm btn-outline-success mt-0"
+          className="btn btn-sm  ms-0"
           style={logo_text}
         >
-          <i className="fa fa-dollar "></i>Donate
+          <i className="badge bg-success fa fa-dollar"></i>Donate
         </button>
       </Link>
 
@@ -114,8 +114,15 @@ function Header() {
           <Link to="/contact" className="nav-item nav-link">
             Contact
           </Link>
+          <Link to="/posts" className="nav-item nav-link">
+            Blog
+          </Link>
+          <Link to="/colors" className="nav-item nav-link">
+            Colors
+          </Link>
 
-          <div className="nav-item dropdown">
+
+          {/* <div className="nav-item dropdown">
             <Link
               className="nav-link dropdown-toggle"
               data-bs-toggle="dropdown"
@@ -159,7 +166,7 @@ function Header() {
                 </>
               )}
             </ul>
-          </div>
+          </div> */}
           <div className="nav-item dropdown">
             <Link
               className="nav-link dropdown-toggle"

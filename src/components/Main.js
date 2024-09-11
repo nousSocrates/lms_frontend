@@ -88,9 +88,19 @@ import RecommendedCourses from "./student/RecommendedCourses";
 import StudentPortal from "./student/StudentPortal";
 import StudentSideBar from "./student/StudentSideBar";
 
-//PAYMENTS
+// BLOG
+import BlogPosts from "./blog/BlogPosts.js";
+import BlogDetails from "./blog/BlogDetails.js";
+import Comment from "./blog/Comment.js";
+import CommentSection from "./blog/CommentSection.js";
+
+//MPESA
 import LipaNaMpesaForm from "./MPESA/LipaNaMpesaForm";
+//PAYPAL
 import PayPalForm from "./PayPal/PayPalForm";
+
+// REACT COLORS
+import ColorTable from "./rxt_colors.js"
 
 
 function Main() {
@@ -212,7 +222,7 @@ function Main() {
         <Route path="/enrolled_courses" element={<EnrolledCourses />} />
         <Route path="/favorite_courses" element={<FavoriteCourses />} />
         <Route path="/recommended_courses" element={<RecommendedCourses />} />
-        {/* ========================Assignment Routes============================= */}
+        {/* ========================Assignment Routes======================= */}
         <Route
           path="/add_assignment/:student_id/:teacher_id"
           element={<AddAssignment />}
@@ -224,9 +234,21 @@ function Main() {
         <Route path="/student_assignments" element={<StudentAssignments />} />
 
         <Route path="/student_logout" element={<StudentLogout />} />
-        {/* PAYMENT ROUTES */}
+
+
+         {/* ========================BLOG ROUTES======================== */}
+        <Route path="/posts" element={<BlogPosts />} />
+        <Route path="/blog_details" element={<BlogDetails />} />
+        <Route path="/comment_section" element={<CommentSection />} />
+        <Route path="/comment" element={<Comment />} />
+
+        {/* ========================PAYMENT ROUTES======================== */}
         <Route path="/mpesa" element={<LipaNaMpesaForm />} />
         <Route path="/paypal" element={<PayPalForm />} />
+
+
+        {/* COLOR TABLE */}
+        <Route path="/colors" element={<ColorTable />} />
       </Switch>
       <Footer />
     </div>

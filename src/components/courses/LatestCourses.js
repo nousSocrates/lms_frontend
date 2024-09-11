@@ -13,7 +13,15 @@ function LatestCourses() {
 
   //axios fetch courses when page loads
   useEffect(() => {
-    fetchData(baseUrl);
+      //fetch popular courses
+
+      try {
+        axios.get(baseUrl + "/courses/").then((res) => {
+          setCourseData(res.data.results);
+        });
+      } catch (error) {
+        console.log(error);
+      }
   }, []);
 
   //Pagination Handler
@@ -49,7 +57,7 @@ function LatestCourses() {
             {courseData &&
               courseData.map((course, index) => (
                 <div
-                  className="col-lg-4 col-md-6 wow fadeInUp"
+                  className="col-lg-3 col-md-3 wow fadeInUp"
                   data-wow-delay="0.3s"
                 >
                   <div className="course-item bg-light">
@@ -77,7 +85,7 @@ function LatestCourses() {
                       </div>
                     </div>
                     <div className="text-center p-3 pb-0">
-                      <h3 className="mb-0 text-success">KSHS 4500</h3>
+                      <h3 className="mb-0 text-success">KSHS {course.current_price}</h3>
                       <div className="mb-3">
                         <small className="fa fa-star text-primary"></small>
                         <small className="fa fa-star text-primary"></small>

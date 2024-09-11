@@ -1,22 +1,21 @@
 import { Container } from "../../componentcss/styledcss/Container.styled";
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 // import axios from "axios";
 import Swal from "sweetalert2";
 import 'sweetalert2/dist/sweetalert2.min.css';
+
+import { paymentUrl } from "../exports";
 
 const LipaNaMpesaForm = () => {
   const [PhoneNumber, setPhoneNumber] = useState("");
   // const [error, setError] = useState('');
   const [Amount, setAmount] = useState("");
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const response = await fetch("http://127.0.0.1:8000/backend/payments/lipa/", {//for local
-      const response = await fetch("https://www.api.socratesschools.co.ke/backend/payments/lipa/", {//live
+      const response = await fetch(paymentUrl+"/payments/lipa/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,9 +64,6 @@ const LipaNaMpesaForm = () => {
     
   };
 
-
-
-
   //styles
   const form_field ={
     "font-family": ' "Courier New", Courier',
@@ -94,7 +90,7 @@ const LipaNaMpesaForm = () => {
             <h6 className="mb-2  text-success ">Thank you for supporting us</h6>
           </div>
           <div className="row g-4 justify-content-center">
-            <form onSubmit={handleSubmit} style={form_field}>
+            <form onSubmit={handleSubmit} style={form_field} className="fs-4">
               <label htmlFor="PhoneNumber">Phone Number:</label>
               <input
                 type="tel"
@@ -118,19 +114,16 @@ const LipaNaMpesaForm = () => {
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className="btn btn-sm btn-outline-success text-light float-end me-2 fs-5"
+                className="btn btn-sm btn-success text-light float-end me-2 fs-5"
               >Donate
               </button> 
-              <hr className="text-success mt-5"/>
-              <p className="text-light fs-4 bg-success">Other Payment Methods </p>
-              <div className="pb-5 m-2">
-                <Link to="/paypal" className="ms-5 text-decoration-none">
-                  <button className="btn btn-sm btn-outline-light text-primary fs-5 float-start ms-5">PayPal</button>
+              <hr className="text-success mt-4"/>
+
+              <p className="text-secondary text-start fs-3 mt-5">You can also donate via
+                <Link to="/paypal" className="text-decoration-none">
+                  <button className="btn btn-sm btn-primary text-light float-end fs-5 me-2">PayPal</button>
                 </Link>
-                <Link to="/paypal" className="ms-5 text-decoration-none">
-                  <button className="btn btn-sm btn-outline-light text-danger fs-5 float-end me-5 ">ATM</button>
-                </Link>
-              </div>
+             </p>
             </form>
           </div>
      
